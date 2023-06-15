@@ -8,6 +8,7 @@ export class Pessoa {
     _peso
     _altura
     _imc
+    _classificacao
     static totalPessoas = 0 // atributos estáticos (static) ou da class
 
     // métodos = funções ou comportamentos
@@ -19,13 +20,13 @@ export class Pessoa {
         this._cidade = cidade
         this._peso = peso
         this._altura = altura
-        this._imc = this._peso / (this._altura * this._altura)
+        this._imc = (this._peso / (this._altura * this._altura)).toFixed(2)
+        this._classificacao = this.classifica_imc()
         Pessoa.totalPessoas += 1  // contador de pessoas com incremento
-
     }
 
     calcula_imc() {
-        return (this._peso / (this._altura * this._altura)).toFixed(2)
+        return this._imc
     }
 
     // Classificando o valor do imc
