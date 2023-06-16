@@ -31,7 +31,7 @@ export class Pessoa {
 
     // Classificando o valor do imc
     classifica_imc(valorImc) {
-        valorImc = (this._imc).toFixed(2)
+        valorImc = this._imc
 
         let classificacao = ""
         
